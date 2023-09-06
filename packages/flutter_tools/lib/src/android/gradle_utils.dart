@@ -220,7 +220,10 @@ Future<String?> getGradleVersion(
 
   if (propertiesFile.existsSync()) {
     final String wrapperFileContent = propertiesFile.readAsStringSync();
+<<<<<<< HEAD
+=======
 
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     final RegExpMatch? distributionUrl =
         distributionUrlRegex.firstMatch(wrapperFileContent);
     if (distributionUrl != null) {

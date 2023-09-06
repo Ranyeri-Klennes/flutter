@@ -10,8 +10,13 @@ dependencies:
   archive: 3.3.2
   args: 2.4.2
   browser_launcher: 1.1.1
+<<<<<<< HEAD
+  dds: 2.7.10
+  dwds: 19.0.0
+=======
   dds: 2.9.0+hotfix
   dwds: 19.0.1+1
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
   completion: 1.0.1
   coverage: 1.6.3
   crypto: 3.0.3
@@ -48,7 +53,11 @@ dependencies:
   http_multi_server: 3.2.1
   convert: 3.1.1
   async: 2.11.0
+<<<<<<< HEAD
+  unified_analytics: 1.1.0
+=======
   unified_analytics: 2.0.0
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 
   # We depend on very specific internal implementation details of the
   # 'test' package, which change between versions, so when upgrading
@@ -106,4 +115,8 @@ dartdoc:
   # Exclude this package from the hosted API docs.
   nodoc: true
 
+<<<<<<< HEAD
+# PUBSPEC CHECKSUM: 473c
+=======
 # PUBSPEC CHECKSUM: 4bb3
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77

@@ -7,7 +7,12 @@ import 'dart:async';
 import 'package:meta/meta.dart';
 import 'package:package_config/package_config.dart';
 
+<<<<<<< HEAD
+import 'android/android_sdk.dart';
+import 'android/android_studio.dart';
+=======
 import 'android/java.dart';
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 import 'base/common.dart';
 import 'base/error_handling_io.dart';
 import 'base/file_system.dart';
@@ -430,7 +435,14 @@ class AndroidMavenArtifacts extends ArtifactSet {
           '--project-cache-dir', tempDir.path,
           'resolveDependencies',
         ],
+<<<<<<< HEAD
+        environment: <String, String>{
+          if (javaPath != null)
+            AndroidSdk.javaHomeEnvironmentVariable: javaPath!,
+        },
+=======
         environment: _java?.environment,
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
       );
       if (processResult.exitCode != 0) {
         logger.printError('Failed to download the Android dependencies');

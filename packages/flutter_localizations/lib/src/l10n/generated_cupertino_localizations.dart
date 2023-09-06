@@ -9410,7 +9410,11 @@ class CupertinoLocalizationPl extends GlobalCupertinoLocalizations {
   String get modalBarrierDismissLabel => 'Zamknij';
 
   @override
+<<<<<<< HEAD
+  String get noSpellCheckReplacementsLabel => 'No Replacements Found';
+=======
   String get noSpellCheckReplacementsLabel => 'Nie znaleziono zastąpień';
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 
   @override
   String get pasteButtonLabel => 'Wklej';

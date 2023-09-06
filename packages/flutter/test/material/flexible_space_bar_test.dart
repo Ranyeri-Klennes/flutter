@@ -162,7 +162,12 @@ void main() {
     );
 
     final dynamic backgroundOpacity = tester.firstWidget(
+<<<<<<< HEAD
+      find.byWidgetPredicate((Widget widget) => widget.runtimeType.toString() == '_FlexibleSpaceHeaderOpacity')
+    );
+=======
       find.byWidgetPredicate((Widget widget) => widget.runtimeType.toString() == '_FlexibleSpaceHeaderOpacity'));
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     // accessing private type member.
     // ignore: avoid_dynamic_calls
     expect(backgroundOpacity.opacity, 1.0);
@@ -801,6 +806,11 @@ void main() {
     ));
 
     expect(RenderRebuildTracker.count, 1);
+<<<<<<< HEAD
+
+    // We drag up to fully collapse the space bar.
+    for (int i = 0; i < 20; i++) {
+=======
     expect(
       tester.layers.lastWhere((Layer element) => element is OpacityLayer),
       isA<OpacityLayer>().having((OpacityLayer p0) => p0.alpha, 'alpha', 255),
@@ -818,12 +828,16 @@ void main() {
     );
 
     for (int i = 0; i < 11; i++) {
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
       await tester.drag(find.byKey(SubCategoryScreenView.scrollKey), const Offset(0, -50.0));
       await tester.pumpAndSettle();
     }
 
     expect(RenderRebuildTracker.count, greaterThan(1));
+<<<<<<< HEAD
+=======
     expect(tester.layers.whereType<OpacityLayer>(), isEmpty);
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
   });
 }
 

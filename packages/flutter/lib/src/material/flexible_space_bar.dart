@@ -451,6 +451,8 @@ class _RenderFlexibleSpaceHeaderOpacity extends RenderOpacity {
 
   @override
   bool get isRepaintBoundary => false;
+<<<<<<< HEAD
+=======
 
   @override
   void paint(PaintingContext context, Offset offset) {
@@ -468,4 +470,5 @@ class _RenderFlexibleSpaceHeaderOpacity extends RenderOpacity {
       return true;
     }());
   }
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 }

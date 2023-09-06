@@ -44,8 +44,11 @@ const String kFlutterMemoryInfoServiceName = 'flutterMemoryInfo';
 const String kFlutterGetSkSLServiceName = 'flutterGetSkSL';
 const String kFlutterGetIOSBuildOptionsServiceName = 'flutterGetIOSBuildOptions';
 const String kFlutterGetAndroidBuildVariantsServiceName = 'flutterGetAndroidBuildVariants';
+<<<<<<< HEAD
+=======
 const String kFlutterGetIOSUniversalLinkSettingsServiceName = 'flutterGetIOSUniversalLinkSettings';
 const String kFlutterGetAndroidAppLinkSettingsName = 'flutterGetAndroidAppLinkSettings';
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 
 /// The error response code from an unrecoverable compilation failure.
 const int kIsolateReloadBarred = 1005;
@@ -246,10 +249,14 @@ Future<vm_service.VmService> setUpVmService({
   }
 
   vmService.registerServiceCallback(kFlutterVersionServiceName, (Map<String, Object?> params) async {
+<<<<<<< HEAD
+    final FlutterVersion version = context.get<FlutterVersion>() ?? FlutterVersion();
+=======
     final FlutterVersion version = context.get<FlutterVersion>() ?? FlutterVersion(
       fs: globals.fs,
       flutterRoot: Cache.flutterRoot!,
     );
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     final Map<String, Object> versionJson = version.toJson();
     versionJson['frameworkRevisionShort'] = version.frameworkRevisionShort;
     versionJson['engineRevisionShort'] = version.engineRevisionShort;
@@ -352,6 +359,8 @@ Future<vm_service.VmService> setUpVmService({
     });
     registrationRequests.add(
       vmService.registerService(kFlutterGetAndroidBuildVariantsServiceName, kFlutterToolAlias),
+<<<<<<< HEAD
+=======
     );
 
     vmService.registerServiceCallback(kFlutterGetIOSUniversalLinkSettingsServiceName, (Map<String, Object?> params) async {
@@ -386,6 +395,7 @@ Future<vm_service.VmService> setUpVmService({
     });
     registrationRequests.add(
       vmService.registerService(kFlutterGetAndroidAppLinkSettingsName, kFlutterToolAlias),
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     );
   }
 

@@ -7,7 +7,10 @@ import 'package:xml/xml.dart';
 import 'package:yaml/yaml.dart';
 
 import '../src/convert.dart';
+<<<<<<< HEAD
+=======
 import 'android/android_app_link_settings.dart';
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 import 'android/android_builder.dart';
 import 'android/gradle_utils.dart' as gradle;
 import 'base/common.dart';
@@ -478,7 +481,10 @@ class AndroidProject extends FlutterProjectPlatform {
   /// Returns true if the current version of the Gradle plugin is supported.
   late final bool isSupportedVersion = _computeSupportedVersion();
 
+<<<<<<< HEAD
+=======
   /// Gets all build variants of this project.
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
   Future<List<String>> getBuildVariants() async {
     if (!existsSync() || androidBuilder == null) {
       return const <String>[];
@@ -486,6 +492,8 @@ class AndroidProject extends FlutterProjectPlatform {
     return androidBuilder!.getBuildVariants(project: parent);
   }
 
+<<<<<<< HEAD
+=======
   /// Returns app link related project settings for a given build variant.
   ///
   /// Use [getBuildVariants] to get all of the available build variants.
@@ -502,6 +510,7 @@ class AndroidProject extends FlutterProjectPlatform {
     );
   }
 
+>>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
   bool _computeSupportedVersion() {
     final FileSystem fileSystem = hostAppGradleRoot.fileSystem;
     final File plugin = hostAppGradleRoot.childFile(
