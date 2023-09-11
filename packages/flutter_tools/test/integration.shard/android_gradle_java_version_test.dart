@@ -32,11 +32,7 @@ void main() {
       tempDir.path,
       '--project-name=testapp',
     ], workingDirectory: tempDir.path);
-<<<<<<< HEAD
-    expect(result.exitCode, 0);
-=======
     expect(result, const ProcessResultMatcher());
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     // Ensure that gradle files exists from templates.
     result = await processManager.run(<String>[
       flutterBin,
@@ -44,11 +40,7 @@ void main() {
       'apk',
       '--config-only',
     ], workingDirectory: tempDir.path);
-<<<<<<< HEAD
-    expect(result.exitCode, 0);
-=======
     expect(result, const ProcessResultMatcher());
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 
     final Directory androidApp = tempDir.childDirectory('android');
     result = await processManager.run(<String>[
@@ -58,11 +50,7 @@ void main() {
       'javaVersion',
     ], workingDirectory: androidApp.path);
     // Verify that gradlew has a javaVersion task.
-<<<<<<< HEAD
-    expect(result.exitCode, 0);
-=======
     expect(result, const ProcessResultMatcher());
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     // Verify the format is a number on its own line.
     expect(result.stdout.toString(), matches(RegExp(r'\d+$', multiLine: true)));
   });

@@ -341,8 +341,6 @@ void main() {
         ProcessManager: () => FakeProcessManager.any(),
       },
     );
-<<<<<<< HEAD
-=======
 
     testUsingContext(
       'runner enabling telemetry with flag',
@@ -399,7 +397,6 @@ void main() {
         ProcessManager: () => FakeProcessManager.any(),
       },
     );
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
   });
 }
 

@@ -20,16 +20,12 @@ class ConfigCommand extends FlutterCommand {
       negatable: false,
       help: 'Clear the saved development certificate choice used to sign apps for iOS device deployment.');
     argParser.addOption('android-sdk', help: 'The Android SDK directory.');
-<<<<<<< HEAD
-    argParser.addOption('android-studio-dir', help: 'The Android Studio install directory. If unset, flutter will search for valid installs at well-known locations.');
-=======
     argParser.addOption('android-studio-dir', help: 'The Android Studio installation directory. If unset, flutter will search for valid installations at well-known locations.');
     argParser.addOption('jdk-dir', help: 'The Java Development Kit (JDK) installation directory. '
       'If unset, flutter will search for one in the following order:\n'
       '    1) the JDK bundled with the latest installation of Android Studio,\n'
       '    2) the JDK found at the directory found in the JAVA_HOME environment variable, and\n'
       "    3) the directory containing the java binary found in the user's path.");
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     argParser.addOption('build-dir', help: 'The relative path to override a projects build directory.',
         valueHelp: 'out/');
     argParser.addFlag('machine',

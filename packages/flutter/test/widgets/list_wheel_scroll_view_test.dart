@@ -1644,11 +1644,7 @@ void main() {
     });
 
     testWidgets('ListWheelScrollView does not crash and does not allow taps on children that were laid out, but not painted', (WidgetTester tester) async {
-<<<<<<< HEAD
-      // Regression test for https://github.com/flutter/flutter/issues/12649
-=======
       // Regression test for https://github.com/flutter/flutter/issues/126491
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 
       final FixedExtentScrollController controller = FixedExtentScrollController();
       final List<int> children = List<int>.generate(100, (int index) => index);
@@ -1705,8 +1701,6 @@ void main() {
       await tester.tap(find.byKey(const ValueKey<int>(2)), warnIfMissed: false);
       expect(tappedChildren, const <int>[0, 1]);
     });
-<<<<<<< HEAD
-=======
   });
 
   testWidgets('ListWheelScrollView creates only one opacity layer for all children', (WidgetTester tester) async {
@@ -1722,6 +1716,5 @@ void main() {
     );
 
     expect(tester.layers.whereType<OpacityLayer>(), hasLength(1));
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
   });
 }

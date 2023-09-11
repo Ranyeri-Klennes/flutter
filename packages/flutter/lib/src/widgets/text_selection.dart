@@ -562,23 +562,13 @@ class TextSelectionOverlay {
   /// Whether the handles are currently visible.
   bool get handlesAreVisible => _selectionOverlay._handles != null && handlesVisible;
 
-<<<<<<< HEAD
-  /// Whether the toolbar is currently visible.
-  ///
-  /// Includes both the text selection toolbar and the spell check menu.
-=======
   /// {@macro flutter.widgets.SelectionOverlay.toolbarIsVisible}
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
   ///
   /// See also:
   ///
   ///   * [spellCheckToolbarIsVisible], which is only whether the spell check menu
   ///     specifically is visible.
-<<<<<<< HEAD
-  bool get toolbarIsVisible => _selectionOverlay._toolbarIsVisible;
-=======
   bool get toolbarIsVisible => _selectionOverlay.toolbarIsVisible;
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 
   /// Whether the magnifier is currently visible.
   bool get magnifierIsVisible => _selectionOverlay._magnifierController.shown;
@@ -992,16 +982,12 @@ class SelectionOverlay {
   /// {@macro flutter.widgets.magnifier.TextMagnifierConfiguration.details}
   final TextMagnifierConfiguration magnifierConfiguration;
 
-<<<<<<< HEAD
-  bool get _toolbarIsVisible {
-=======
   /// {@template flutter.widgets.SelectionOverlay.toolbarIsVisible}
   /// Whether the toolbar is currently visible.
   ///
   /// Includes both the text selection toolbar and the spell check menu.
   /// {@endtemplate}
   bool get toolbarIsVisible {
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     return selectionControls is TextSelectionHandleControls
         ? _contextMenuController.isShown || _spellCheckToolbarController.isShown
         : _toolbar != null || _spellCheckToolbarController.isShown;
@@ -1018,11 +1004,7 @@ class SelectionOverlay {
   /// [MagnifierController.shown].
   /// {@endtemplate}
   void showMagnifier(MagnifierInfo initialMagnifierInfo) {
-<<<<<<< HEAD
-    if (_toolbarIsVisible) {
-=======
     if (toolbarIsVisible) {
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
       hideToolbar();
     }
 
@@ -2276,10 +2258,6 @@ class TextSelectionGestureDetectorBuilder {
           break;
           // On desktop platforms the selection is set on tap down.
         case TargetPlatform.android:
-<<<<<<< HEAD
-          editableText.hideToolbar();
-=======
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
           if (isShiftPressedValid) {
             _extendSelection(details.globalPosition, SelectionChangedCause.tap);
             return;

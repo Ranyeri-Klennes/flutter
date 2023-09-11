@@ -16583,8 +16583,6 @@ void main() {
       expectedConfiguration.spellCheckSuggestionsToolbarBuilder,
     );
   }, variant: const TargetPlatformVariant(<TargetPlatform>{ TargetPlatform.android, TargetPlatform.iOS }));
-<<<<<<< HEAD
-=======
 
   testWidgets('text selection toolbar is hidden on tap down', (WidgetTester tester) async {
     final TextEditingController controller = TextEditingController(
@@ -16632,7 +16630,6 @@ void main() {
     skip: isContextMenuProvidedByPlatform, // [intended] only applies to platforms where we supply the context menu.
     variant: TargetPlatformVariant.all(excluding: <TargetPlatform>{ TargetPlatform.iOS }),
   );
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 }
 
 /// A Simple widget for testing the obscure text.

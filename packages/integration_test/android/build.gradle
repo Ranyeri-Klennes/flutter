@@ -30,12 +30,8 @@ android {
     if (project.android.hasProperty("namespace")) {
         namespace 'dev.flutter.integration_test'
     }
-<<<<<<< HEAD
-    compileSdkVersion 31
-=======
 
     compileSdkVersion 33
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

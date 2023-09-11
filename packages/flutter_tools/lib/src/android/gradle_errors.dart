@@ -11,11 +11,6 @@ import '../base/terminal.dart';
 import '../globals.dart' as globals;
 import '../project.dart';
 import '../reporting/reporting.dart';
-<<<<<<< HEAD
-import 'android_sdk.dart';
-import 'android_studio.dart';
-=======
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 import 'gradle_utils.dart';
 import 'multidex.dart';
 
@@ -383,14 +378,7 @@ final GradleHandledError flavorUndefinedHandler = GradleHandledError(
       ],
       throwOnError: true,
       workingDirectory: project.android.hostAppGradleRoot.path,
-<<<<<<< HEAD
-      environment: <String, String>{
-        if (javaPath != null)
-          AndroidSdk.javaHomeEnvironmentVariable: javaPath!,
-      },
-=======
       environment: globals.java?.environment,
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     );
     // Extract build types and product flavors.
     final Set<String> variants = <String>{};

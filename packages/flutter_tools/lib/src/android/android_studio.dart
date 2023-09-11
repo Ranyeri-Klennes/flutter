@@ -28,21 +28,6 @@ import 'android_studio_validator.dart';
 final RegExp _dotHomeStudioVersionMatcher =
     RegExp(r'^\.?(AndroidStudio[^\d]*)([\d.]+)');
 
-<<<<<<< HEAD
-// TODO(andrewkolos): this global variable is used in several places to provide
-// a java binary to multiple Java-dependent tools, including the Android SDK
-// and Gradle. If this is null, these tools will implicitly fall back to current
-// JAVA_HOME env variable and then to any java found on PATH.
-//
-// This logic is consistent with that used by flutter doctor to find a valid JDK,
-// but this consistency is fragile--the implementations of this logic
-// exist independently of each other.
-//
-// See https://github.com/flutter/flutter/issues/124252.
-String? get javaPath => globals.androidStudio?.javaPath;
-
-=======
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 class AndroidStudio {
   /// A [version] value of null represents an unknown version.
   AndroidStudio(
@@ -252,32 +237,14 @@ class AndroidStudio {
   /// invalid.
   static AndroidStudio? latestValid() {
     final String? configuredStudioPath = globals.config.getValue('android-studio-dir') as String?;
-<<<<<<< HEAD
-    if (configuredStudioPath != null) {
-      String correctedConfiguredStudioPath = configuredStudioPath;
-      if (globals.platform.isMacOS && !correctedConfiguredStudioPath.endsWith('Contents')) {
-        correctedConfiguredStudioPath = globals.fs.path.join(correctedConfiguredStudioPath, 'Contents');
-      }
-
-      if (!globals.fs.directory(correctedConfiguredStudioPath).existsSync()) {
-        throwToolExit('''
-=======
     if (configuredStudioPath != null && !globals.fs.directory(configuredStudioPath).existsSync()) {
       throwToolExit('''
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
 Could not find the Android Studio installation at the manually configured path "$configuredStudioPath".
 Please verify that the path is correct and update it by running this command: flutter config --android-studio-dir '<path>'
 
 To have flutter search for Android Studio installations automatically, remove
 the configured path by running this command: flutter config --android-studio-dir ''
 ''');
-<<<<<<< HEAD
-      }
-
-      return AndroidStudio(correctedConfiguredStudioPath,
-          configuredPath: configuredStudioPath);
-=======
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     }
 
     // Find all available Studio installations.
@@ -483,11 +450,7 @@ the configured path by running this command: flutter config --android-studio-dir
                 studioAppName: title,
               );
               if (!alreadyFoundStudioAt(studio.directory, newerThan: studio.version)) {
-<<<<<<< HEAD
-                studios.removeWhere((AndroidStudio other) => other.directory == studio.directory);
-=======
                 studios.removeWhere((AndroidStudio other) => _pathsAreEqual(other.directory, studio.directory));
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
                 studios.add(studio);
               }
             }
@@ -497,11 +460,6 @@ the configured path by running this command: flutter config --android-studio-dir
     }
 
     final String? configuredStudioDir = globals.config.getValue('android-studio-dir') as String?;
-<<<<<<< HEAD
-    if (configuredStudioDir != null && !alreadyFoundStudioAt(configuredStudioDir)) {
-      studios.add(AndroidStudio(configuredStudioDir,
-          configuredPath: configuredStudioDir));
-=======
     if (configuredStudioDir != null) {
       final AndroidStudio? matchingAlreadyFoundInstall = studios
         .where((AndroidStudio other) => _pathsAreEqual(configuredStudioDir, other.directory))
@@ -519,7 +477,6 @@ the configured path by running this command: flutter config --android-studio-dir
         studios.add(AndroidStudio(configuredStudioDir,
           configuredPath: configuredStudioDir));
       }
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
     }
 
     if (globals.platform.isLinux) {
@@ -557,26 +514,14 @@ the configured path by running this command: flutter config --android-studio-dir
     if (globals.platform.isMacOS) {
       if (version != null && version!.major < 2020) {
         javaPath = globals.fs.path.join(directory, 'jre', 'jdk', 'Contents', 'Home');
-<<<<<<< HEAD
-      } else if (version != null && version!.major == 2022) {
-        javaPath = globals.fs.path.join(directory, 'jbr', 'Contents', 'Home');
-      } else {
-=======
       } else if (version != null && version!.major < 2022) {
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
         javaPath = globals.fs.path.join(directory, 'jre', 'Contents', 'Home');
       // See https://github.com/flutter/flutter/issues/125246 for more context.
       } else {
         javaPath = globals.fs.path.join(directory, 'jbr', 'Contents', 'Home');
       }
     } else {
-<<<<<<< HEAD
-      if (version != null && version!.major == 2022) {
-        javaPath = globals.fs.path.join(directory, 'jbr');
-      } else {
-=======
       if (version != null && version!.major < 2022) {
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
         javaPath = globals.fs.path.join(directory, 'jre');
       } else {
         javaPath = globals.fs.path.join(directory, 'jbr');

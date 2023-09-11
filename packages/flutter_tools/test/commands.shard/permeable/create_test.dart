@@ -2848,8 +2848,6 @@ void main() {
     expect(buildContent.contains('targetSdkVersion flutter.targetSdkVersion'), true);
   });
 
-<<<<<<< HEAD
-=======
   testUsingContext('Android Java plugin contains namespace', () async {
     Cache.flutterRoot = '../..';
 
@@ -2921,7 +2919,6 @@ void main() {
     expect(buildGradleContent.contains('if (project.android.hasProperty("namespace")) {'), true);
   });
 
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
   testUsingContext('Flutter module Android project contains namespace', () async {
     const String moduleBuildGradleFilePath = '.android/build.gradle';
     const String moduleAppBuildGradleFlePath = '.android/app/build.gradle';

@@ -63,8 +63,6 @@ Future<int> run(
     StackTrace? firstStackTrace;
     return runZoned<Future<int>>(() async {
       try {
-<<<<<<< HEAD
-=======
         if (args.contains('--disable-telemetry') &&
             args.contains('--enable-telemetry')) {
           throwToolExit(
@@ -73,7 +71,6 @@ Future<int> run(
               exitCode: 1);
         }
 
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
         // Disable analytics if user passes in the `--disable-telemetry` option
         // `flutter --disable-telemetry`
         //

@@ -81,8 +81,6 @@ const List<VmServiceExpectation> kAttachIsolateExpectations =
   FakeVmServiceRequest(method: 'registerService', args: <String, Object>{
     'service': kFlutterGetAndroidBuildVariantsServiceName,
     'alias': kFlutterToolAlias,
-<<<<<<< HEAD
-=======
   }),
   FakeVmServiceRequest(method: 'registerService', args: <String, Object>{
     'service': kFlutterGetIOSUniversalLinkSettingsServiceName,
@@ -91,7 +89,6 @@ const List<VmServiceExpectation> kAttachIsolateExpectations =
   FakeVmServiceRequest(method: 'registerService', args: <String, Object>{
     'service': kFlutterGetAndroidAppLinkSettingsName,
     'alias': kFlutterToolAlias,
->>>>>>> e1e47221e86272429674bec4f1bd36acc4fc7b77
   }),
   FakeVmServiceRequest(
     method: 'streamListen',
